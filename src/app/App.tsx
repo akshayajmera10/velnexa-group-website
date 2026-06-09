@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router';
+import { initGA, trackPageView } from './lib/analytics';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
@@ -24,6 +25,17 @@ function ScrollToTop() {
   return null;
 }
 
+function PageViewTracker() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    trackPageView(pathname);
+  }, [pathname]);
+  return null;
+}
+
+// Initialize GA once at module load
+initGA();
+
 function Layout() {
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F5F7FA' }}>
@@ -31,6 +43,7 @@ function Layout() {
       <Header />
       <main className="flex-1">
         <ScrollToTop />
+        <PageViewTracker />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/materials" element={<MaterialsPage />} />

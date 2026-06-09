@@ -1,5 +1,6 @@
 import { MessageCircle } from 'lucide-react';
 import { motion } from 'motion/react';
+import { trackEvent } from '../lib/analytics';
 
 export function WhatsAppButton() {
   return (
@@ -7,6 +8,7 @@ export function WhatsAppButton() {
       href="https://wa.me/919220641177?text=Hello%20Velnexa%20Group%2C%0A%0AI%20would%20like%20to%20discuss%20a%20business%20requirement."
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackEvent('whatsapp_click', { location: 'floating_button' })}
       aria-label="Chat on WhatsApp"
       className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 rounded-full shadow-2xl text-white"
       style={{ backgroundColor: '#25D366', fontFamily: 'Inter, sans-serif', fontSize: '0.875rem', fontWeight: 600 }}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
+import { trackEvent } from '../lib/analytics';
 import { CheckCircle2, Mail, Phone, MessageCircle, ArrowRight, MapPin } from 'lucide-react';
 
 type FormData = {
@@ -46,6 +47,7 @@ export function ContactPage() {
       });
       const json = await res.json();
       if (json.success) {
+        trackEvent('form_submit', { form_name: 'contact_form' });
         setSubmitted(true);
         reset();
         setTimeout(() => setSubmitted(false), 8000);

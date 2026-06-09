@@ -1,6 +1,7 @@
 import { useState, useRef, type FocusEvent, type ChangeEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useForm } from 'react-hook-form';
+import { trackEvent } from '../lib/analytics';
 import { CheckCircle2, Mail, Phone, ArrowRight, TrendingUp, Upload, X, ImageIcon, ChevronDown, Check } from 'lucide-react';
 
 type SellFormData = {
@@ -133,6 +134,7 @@ export function SellPage() {
       });
       const json = await res.json();
       if (json.success) {
+        trackEvent('form_submit', { form_name: 'sell_form' });
         setSubmitted(true);
         setUploadedFiles([]);
         setSelectedMaterials([]);
@@ -196,7 +198,7 @@ export function SellPage() {
               className="text-gray-300 max-w-xl"
               style={{ fontFamily: 'Inter, sans-serif', fontSize: '1.0625rem', lineHeight: 1.75 }}
             >
-              Connect with verified buyers and trading partners through Velnexa's trusted metal network. From surplus inventory to bulk metal lots, we help you maximize value through transparent pricing and efficient execution.
+              Connect with verified buyers and trading partners through Velnexa’s trusted metal network. From surplus inventory to bulk metal lots, we help you maximize value through transparent pricing and efficient execution.
             </p>
           </motion.div>
         </div>

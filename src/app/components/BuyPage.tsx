@@ -1,6 +1,7 @@
 import { useState, useRef, type FocusEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useForm } from 'react-hook-form';
+import { trackEvent } from '../lib/analytics';
 import { CheckCircle2, Mail, Phone, ArrowRight, ChevronDown, Check, X } from 'lucide-react';
 
 type FormData = {
@@ -90,6 +91,7 @@ export function BuyPage() {
       });
       const json = await res.json();
       if (json.success) {
+        trackEvent('form_submit', { form_name: 'buy_form' });
         setSubmitted(true);
         setSelectedMaterials([]);
         reset();
