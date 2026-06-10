@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Mail, Phone, MessageCircle, MapPin } from 'lucide-react';
+import { Mail, Phone, MessageCircle, MapPin, Linkedin } from 'lucide-react';
 import logo from '../../imports/Velnexa_Group_Logo-removebg.png';
 
 const quickLinks = [
@@ -52,16 +52,28 @@ export function Footer() {
             >
               Velnexa is a global network for bulk metal trading, connecting industries, suppliers, and traders with efficient sourcing and reliable execution.
             </p>
-            <div className="flex gap-3 mt-6">
+            <div className="flex flex-wrap gap-3 mt-6">
               <a
                 href="https://wa.me/919220641177"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm transition-all hover:brightness-110"
                 style={{ backgroundColor: '#25D366', color: '#fff', fontFamily: 'Inter, sans-serif', fontWeight: 600 }}
+                aria-label="Chat with Velnexa Group on WhatsApp"
               >
                 <MessageCircle size={15} />
                 WhatsApp
+              </a>
+              <a
+                href="https://www.linkedin.com/company/velnexa-group"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm transition-all hover:brightness-110"
+                style={{ backgroundColor: '#0A66C2', color: '#fff', fontFamily: 'Inter, sans-serif', fontWeight: 600 }}
+                aria-label="Follow Velnexa Group on LinkedIn"
+              >
+                <Linkedin size={15} />
+                LinkedIn
               </a>
             </div>
           </div>
