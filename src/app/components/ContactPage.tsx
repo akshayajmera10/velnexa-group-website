@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { useForm } from 'react-hook-form';
 import { trackEvent } from '../lib/analytics';
-import { CheckCircle2, Mail, Phone, MessageCircle, ArrowRight, MapPin } from 'lucide-react';
+import { CheckCircle2, Mail, Phone, MessageCircle, ArrowRight, MapPin, Linkedin } from 'lucide-react';
 
 type FormData = {
   name: string;
@@ -152,12 +152,20 @@ export function ContactPage() {
                   href: 'https://wa.me/919220641177',
                   note: 'Quick responses via WhatsApp',
                 },
+                {
+                  Icon: Linkedin,
+                  label: 'LinkedIn',
+                  value: 'Velnexa Group',
+                  href: 'https://www.linkedin.com/company/velnexa-group',
+                  note: 'Connect & follow us on LinkedIn',
+                },
               ].map(({ Icon, label, value, href, note }, i) => (
                 <a
                   key={i}
                   href={href}
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  aria-label={label}
                   className="flex items-start gap-4 p-5 rounded-xl bg-white shadow-sm hover:shadow-md transition-all group"
                   style={{ border: '1px solid rgba(11,31,58,0.07)', textDecoration: 'none' }}
                 >
