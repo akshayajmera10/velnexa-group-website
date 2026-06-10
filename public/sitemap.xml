@@ -24,4 +24,12 @@
     <loc>https://www.velnexagroup.com/contact</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.velnexagroup.com/about</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.velnexagroup.com/import-export</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
