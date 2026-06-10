@@ -150,8 +150,8 @@ export function IndustriesPage() {
               style={{ border: '1px solid rgba(212,175,55,0.15)', height: '300px' }}
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1700777685830-f501e67260e6?w=800&h=600&fit=crop&auto=format"
-                alt="Industrial crane lifting container for metal trade logistics"
+                src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=800&h=600&fit=crop&auto=format"
+                alt="Aerial view of shipping container yard for international metal trade logistics"
                 className="w-full h-full object-cover"
               />
             </motion.div>
